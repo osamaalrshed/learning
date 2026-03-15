@@ -24,6 +24,9 @@ def init_db():
         """)
 
 
+init_db()
+
+
 @app.route("/")
 def index():
     with get_db() as conn:
@@ -55,5 +58,4 @@ def delete(todo_id):
 
 
 if __name__ == "__main__":
-    init_db()
     app.run(debug=True)
