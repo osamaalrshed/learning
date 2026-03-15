@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
+import os
+
 app = Flask(__name__)
-DB = "todos.db"
+DB = os.path.join(os.path.dirname(__file__), "todos.db")
 
 
 def get_db():
